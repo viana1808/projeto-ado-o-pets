@@ -1,0 +1,450 @@
+:root{
+    --main-color: #163f10;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid  rgb(0, 0, 0);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2 linear;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    background-color: white;
+
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.icons img {
+    width: 30px;  
+    height: 30px; 
+    cursor: pointer; /* Faz o mouse virar a "mãozinha" ao passar por cima */
+    margin-left: 1.5rem; /* Dá um espaço entre um ícone e outro */
+    transition: transform 0.2s; /* Efeito suave para o hover */
+}
+
+/*efeito quando passar o mouse fica bem moderno */
+.icons img:hover {
+    transform: scale(1.1); 
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: var(--border);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #000
+}
+
+.navbar a:hover{
+    color: #163f10;
+    border-bottom: var(--border);
+    padding-bottom: 0.5rem;
+    font-size: 1.3rm;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white; /* ISSO VAI DEIXAR O TOPO BRANCO */
+    border-bottom: var(--border);
+}
+
+.home-container {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./img/fotoprincipal.png");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex; /* Flexbox para centralizar o texto */
+    align-items: center; /* Centraliza verticalmente */
+    padding-top: 10rem; /* Garante que o conteúdo não fique escondido sob o menu */
+}
+
+/* Estilizando o texto sobre a imagem */
+.home-container .content {
+    max-width: 60rem; /* Não deixa o texto ocupar a tela toda */
+    color: white; /* Cor do texto para aparecer sobre a foto */
+}
+
+.home-container h3 {
+    font-size: 5rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.home-container p {
+    font-size: 2rem;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+}
+.btn {
+    display: inline-block; 
+    background: #163f10;  
+    color: #ffffff;        
+    padding: 1.2rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 5rem;   
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s ease; /* Transição suave para o efeito de passar o mouse */
+    box-shadow: 0 0.5rem 1.5rem rgba(22, 63, 16, 0.3); /* Uma sombra leve no tom do verde */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn:hover {
+    background: #1e5616;   
+    transform: translateY(-3px); /* O botão "sobe" levemente */
+    box-shadow: 0 0.8rem 2rem rgba(22, 63, 16, 0.5); /* Sombra aumenta no hover */
+    color: #fff; /* Garante que o texto continue branco */
+}
+
+/* Efeito ao clicar */
+.btn:active {
+    transform: translateY(-1px); /* Botão desce um pouquinho quando clicado */
+}
+
+/* Título Sobre Nós */
+.title {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--black);
+    padding-bottom: 3rem;
+}
+
+.title span {
+    color: var(--main-color);
+}
+
+/* A "Linha" que contém Foto e Texto */
+.about .row {
+    display: flex;
+    align-items: stretch; /* Garante que foto e fundo verde tenham a mesma altura */
+    flex-wrap: wrap;
+    background: var(--main-color); /* Fundo verde do quadrado */
+    border-radius: 2rem;
+    overflow: hidden; /* Corta a imagem nas bordas arredondadas */
+}
+
+.about .row .image-container {
+    flex: 1 1 45rem;
+}
+
+.about .row .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o espaço sem distorcer */
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 5rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #eee;
+    padding: 2rem 0;
+    line-height: 1.8;
+}
+
+/* Botão dentro do Sobre Nós (Branco para destacar) */
+.about .row .content .btn {
+    background: #fff;
+    color: var(--main-color);
+}
+
+.about .row .content .btn:hover {
+    background: var(--black);
+    color: #fff;
+}
+
+.functions {
+    background: #fff; /* Fundo branco para contrastar com o verde anterior */
+}
+
+.functions .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.functions .box-container .box {
+    padding: 3rem;
+    text-align: center;
+    border: var(--border);
+    border-radius: 2rem;
+    transition: 0.3s ease;
+}
+
+.functions .box-container .box span {
+    font-size: 5rem; /* Tamanho do emoji de pata */
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.functions .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.functions .box-container .box p {
+    font-size: 1.5rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Efeito Criativo: O card ganha vida ao passar o mouse */
+.functions .box-container .box:hover {
+    background: var(--main-color);
+    transform: translateY(-1rem);
+}
+
+.functions .box-container .box:hover h3,
+.functions .box-container .box:hover p {
+    color: #fff; /* O texto fica branco quando o fundo fica verde */
+}
+
+.functions .box-container .box:hover span {
+    filter: brightness(0) invert(1); /* Faz o emoji brilhar ou destaca ele */
+}
+
+/* --- SEÇÃO DE ADOÇÃO --- */
+.adopt {
+    padding: 5rem 9%; /* Espaçamento lateral para alinhar com o resto do site */
+}
+
+.adopt .title {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.adopt .title span {
+    color: #27ae60; /* Ou a cor principal do seu projeto */
+}
+
+/* Container que segura todos os cards */
+.adopt .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2.5rem;
+}
+
+/* O Card do Pet */
+.adopt .box {
+    height: 40rem;
+    position: relative;
+    overflow: hidden; /* Garante que o conteúdo não saia das bordas arredondadas */
+    border-radius: 2rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da Imagem */
+.adopt .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ajusta a foto sem distorcer o animal */
+    transition: transform .4s ease;
+}
+
+/* Camada de informações (escondida inicialmente) */
+.adopt .box .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(39, 174, 96, 0.9); /* Verde com transparência */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    transform: translateY(100%); /* Coloca a camada para fora da visão (embaixo) */
+    transition: transform .4s ease-in-out;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.adopt .box:hover .overlay {
+    transform: translateY(0); /* A camada sobe para cobrir a foto */
+}
+
+.adopt .box:hover img {
+    transform: scale(1.1); /* Dá um zoom sutil na foto ao fundo */
+}
+
+/* Textos dentro do Overlay */
+.adopt .box .overlay h3 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.adopt .box .overlay p {
+    font-size: 1.6rem;
+    color: #f0f0f0;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Botão Adotar-me dentro do card */
+.adopt .box .overlay .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.7rem;
+    color: #27ae60;
+    background: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background .3s ease;
+}
+
+.adopt .box .overlay .btn:hover {
+    background: #fdfdfd;
+    letter-spacing: 0.1rem; /* Um charminho extra no hover do botão */
+}
+
+/* --- SEÇÃO COMO AJUDAR --- */
+.help {
+    padding: 5rem 9%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.help .help-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.help .help-content h3 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.help .help-content p {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 4rem;
+    line-height: 1.6;
+}
+
+.help .help-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.help .help-card {
+    flex: 1 1 40rem;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 0.2rem solid var(--main-color);
+    transition: 0.3s linear;
+}
+
+.help .help-card:hover {
+    background: var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* Mudar cor do texto no hover do card */
+.help .help-card:hover h4, 
+.help .help-card:hover p {
+    color: #fff;
+}
+
+.help .help-card i {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.help .help-card:hover i {
+    color: #fff;
+}
+
+.help .help-card h4 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.help .help-card p {
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.footer {
+    padding: 3rem 9%;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-info p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    font-weight: 300;
+}
+
+.footer-info strong {
+    color: #fff; /* Aqui mudamos para branco */
+    font-size: 1.8rem;
+    display: block; /* Garante que o nome fique em uma linha própria se preferir */
+    margin-bottom: 0.5rem;
+}
